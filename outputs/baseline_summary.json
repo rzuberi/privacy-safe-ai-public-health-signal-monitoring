@@ -33,6 +33,7 @@
   },
   "notes": [
     "Simple baseline for interpretable anomaly scoring.",
-    "Uses only aggregate synthetic signals in this repository."
+    "Uses only aggregate synthetic signals in this repository.",
+    "Threshold is a demo default rather than a validated operating point."
   ]
 }

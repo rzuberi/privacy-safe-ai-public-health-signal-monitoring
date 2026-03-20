@@ -9,6 +9,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 OUTPUT_DIR = ROOT / "outputs"
+DEFAULT_ALERT_THRESHOLD = 2.35
+ROBUST_SCALE_FACTOR = 1.4826
 FEATURE_COLUMNS = [
     "respiratory_visits_index",
     "otc_cold_flu_index",
