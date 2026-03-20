@@ -1,20 +1,23 @@
 {
   "dataset_rows": 180,
+  "evaluated_rows": 120,
+  "reference_days_excluded": 60,
   "data_scope": "synthetic aggregate toy signals only",
   "intended_use": "repository sanity check only",
   "operational_relevance": "none",
-  "true_positives": 13,
-  "false_positives": 0,
-  "true_negatives": 156,
-  "false_negatives": 11,
-  "precision": 1.0,
-  "recall": 0.5417,
-  "f1": 0.7027,
-  "alert_rate": 0.0722,
+  "true_positives": 8,
+  "false_positives": 1,
+  "true_negatives": 95,
+  "false_negatives": 16,
+  "precision": 0.8889,
+  "recall": 0.3333,
+  "f1": 0.4848,
+  "alert_rate": 0.075,
   "evaluation_limits": [
     "Labels are synthetic and were generated for a narrow toy scenario.",
+    "Metrics exclude the reference window used to fit the baseline.",
     "These metrics should not be treated as evidence of real-world monitoring performance.",
     "The summary is useful for regression checks inside the demo repository only."
   ],
-  "note": "Metrics are against synthetic labels and are included for transparency, not validation."
+  "note": "Metrics come from a single synthetic run with hand-authored toy anomalies and are computed only on the out-of-sample monitoring period after the reference window."
 }

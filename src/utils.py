@@ -59,4 +59,4 @@ def load_json(path: Path) -> dict:
 def top_feature_explanation(contributions: Dict[str, float], top_k: int = 2) -> str:
     ranked: List[tuple[str, float]] = sorted(contributions.items(), key=lambda item: item[1], reverse=True)
     snippets = [f"{name}={value:.2f}" for name, value in ranked[:top_k] if value > 0]
-    return "stable baseline" if not snippets else "top contributors: " + ", ".join(snippets)
+    return "no significant deviations" if not snippets else "top contributors: " + ", ".join(snippets)

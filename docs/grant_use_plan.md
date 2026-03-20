@@ -19,6 +19,7 @@ The main bottlenecks are not grand research claims. They are practical constrain
 - limited compute for broader but still safe benchmarking
 - limited tooling for repeatable experiments and comparison across baselines
 - limited infrastructure for reproducibility, packaging, and evaluation tracking
+- limited environment capture and experiment logging for exact reruns across machines
 - no lightweight hosted interface for showing the workflow cleanly if that becomes useful
 
 ## Specific resources that would accelerate progress

@@ -12,19 +12,19 @@
   "feature_stats": {
     "respiratory_visits_index": {
       "median": 1.0519839097090309,
-      "mad": 0.05685631357207044
+      "mad": 0.04783383744322567
     },
     "otc_cold_flu_index": {
-      "median": 0.917944897421064,
-      "mad": 0.05558503938226855
+      "median": 0.9056760659648522,
+      "mad": 0.04272583890235415
     },
     "school_absence_index": {
       "median": 1.0023360543475839,
       "mad": 0.037537511750454444
     },
     "symptom_search_index": {
-      "median": 1.1011906489433567,
-      "mad": 0.03593809152760008
+      "median": 1.0990891748432,
+      "mad": 0.032493870539755276
     },
     "wastewater_proxy_index": {
       "median": 0.9528061009948952,

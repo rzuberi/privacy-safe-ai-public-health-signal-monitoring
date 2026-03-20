@@ -69,6 +69,8 @@ This repository therefore keeps the technical design modest and the documentatio
 
 This first pass is narrow on purpose. A broader system would need much stronger evaluation, careful governance, better uncertainty handling, and expert review. Starting small makes it easier to inspect assumptions, document boundaries, and avoid implying capabilities that do not yet exist.
 
+The baseline itself is deliberately simple. It uses robust medians and median absolute deviations so that alert behavior is easy to inspect and discuss. That is useful at this stage because it keeps the demo interpretable, but it also means the repository should be read as a research scaffold rather than a deployable model.
+
 ## Current Prototype Scope
 
 This first version currently focuses on:
@@ -118,6 +120,12 @@ flowchart LR
 ## Sample CLI Usage
 
 ```bash
+./run_demo.sh
+```
+
+Or run the individual modules:
+
+```bash
 python3 -m src.generate_data
 python3 -m src.train_baseline
 python3 -m src.score_signals
@@ -131,23 +139,32 @@ The repository already includes sample outputs generated from this workflow.
 The demo is meant to be rerunnable in a few commands from a clean checkout:
 
 ```bash
-python3 -m src.generate_data
-python3 -m src.train_baseline
+./run_demo.sh
+```
+
+If you rerun the pipeline with the default seed, it will regenerate the synthetic dataset, baseline summary, predictions CSV, interpretability summaries, plot, and evaluation summary shipped in the repository.
+
+For a lightweight environment setup, the repository also includes `environment.yaml` alongside `requirements.txt`.
+
+To test sensitivity rather than just reproduce the checked-in outputs, you can vary the seed or the reference window:
+
+```bash
+python3 -m src.generate_data --seed 42
+python3 -m src.train_baseline --reference-days 75
 python3 -m src.score_signals
 python3 -m src.evaluate
 ```
-
-If you rerun the pipeline with the default seed, it will regenerate the synthetic dataset, baseline summary, predictions CSV, plot, and evaluation summary shipped in the repository.
 
 ## Current Sample Output
 
 The checked-in sample run is intentionally modest:
 
 - 180 synthetic daily rows
-- 13 alert days flagged
-- precision `1.00` and recall `0.54` against synthetic labels only
+- 9 alert days flagged in the sample run
+- precision `0.89` and recall `0.33` on the out-of-sample period after the reference window
+- alerts and explanations come from a single synthetic run with fixed defaults
 
-Those figures are included as a transparent demo artifact, not as a claim about real-world performance.
+Those artifacts are included for transparency, not as a claim about real-world performance.
 
 ## Repository Structure
 
@@ -164,6 +181,8 @@ privacy-safe-ai-public-health-signal-monitoring/
 ├── outputs/
 │   ├── baseline_summary.json
 │   ├── evaluation_summary.json
+│   ├── feature_contributions.csv
+│   ├── feature_contributions.png
 │   ├── sample_plot.png
 │   └── sample_predictions.csv
 ├── src/
@@ -175,8 +194,10 @@ privacy-safe-ai-public-health-signal-monitoring/
 │   └── utils.py
 ├── .gitignore
 ├── LICENSE
+├── environment.yaml
 ├── pyproject.toml
 ├── README.md
+├── run_demo.sh
 └── requirements.txt
 ```
 
@@ -254,6 +275,7 @@ See [docs/safety_note.md](docs/safety_note.md) for the short project note.
 ## Limitations
 
 - the data are synthetic, so performance numbers are only sanity checks
+- the anomalies are hand-authored toy events and are intentionally easier to detect than real weak signals
 - the baseline is intentionally simple and should not be mistaken for a validated system
 - the explanations are lightweight heuristic summaries, not full causal analysis
 - this repository is aimed at research scoping, not deployment

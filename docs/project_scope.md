@@ -26,6 +26,13 @@ For this repository, success means:
 - safety and scope boundaries are explicit
 - the next research steps are concrete
 
+## Synthetic data constraints
+
+- anomaly windows are hand-authored toy events rather than realistic subtle signals
+- seasonality, lag, and reporting noise are simplified for inspection rather than realism
+- sample metrics are sanity checks for repo regression, not evidence of field performance
+- the current dataset is designed to support out-of-sample evaluation after a short calibration window
+
 ## Success in a later funded version
 
 A stronger, funded version would still remain safely scoped, but success would look like:

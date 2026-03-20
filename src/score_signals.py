@@ -63,12 +63,37 @@ def make_plot(scored: pd.DataFrame, output_path: Path) -> None:
     plt.close(fig)
 
 
+def summarize_contributions(scored: pd.DataFrame, output_csv: Path, output_plot: Path) -> None:
+    contribution_columns = ["{}_contribution".format(column) for column in FEATURE_COLUMNS]
+    summary = scored.loc[scored["alert_flag"] == 1, contribution_columns].mean().rename(
+        lambda column: column.replace("_contribution", "")
+    )
+    if summary.empty:
+        summary = pd.Series(0.0, index=FEATURE_COLUMNS)
+    summary = summary.sort_values(ascending=False).reset_index()
+    summary.columns = ["feature", "mean_alert_contribution"]
+    summary.to_csv(output_csv, index=False)
+
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    ax.bar(summary["feature"], summary["mean_alert_contribution"], color="#1d4ed8")
+    ax.set_title("Mean feature contribution on alert days")
+    ax.set_xlabel("feature")
+    ax.set_ylabel("mean positive contribution")
+    ax.tick_params(axis="x", rotation=25)
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(output_plot, dpi=150)
+    plt.close(fig)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Score synthetic signals with the saved baseline.")
     parser.add_argument("--input", default=None)
     parser.add_argument("--baseline", default=str(OUTPUT_DIR / "baseline_summary.json"))
     parser.add_argument("--output", default=str(OUTPUT_DIR / "sample_predictions.csv"))
     parser.add_argument("--plot-output", default=str(OUTPUT_DIR / "sample_plot.png"))
+    parser.add_argument("--contribution-csv", default=str(OUTPUT_DIR / "feature_contributions.csv"))
+    parser.add_argument("--contribution-plot", default=str(OUTPUT_DIR / "feature_contributions.png"))
     args = parser.parse_args()
 
     ensure_directories()
@@ -82,8 +107,11 @@ def main() -> None:
     scored = score_dataframe(df, baseline)
     scored.to_csv(args.output, index=False)
     make_plot(scored, Path(args.plot_output))
+    summarize_contributions(scored, Path(args.contribution_csv), Path(args.contribution_plot))
     print(f"saved predictions to {args.output}")
     print(f"saved plot to {args.plot_output}")
+    print(f"saved contribution summary to {args.contribution_csv}")
+    print(f"saved contribution plot to {args.contribution_plot}")
 
 
 if __name__ == "__main__":

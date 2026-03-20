@@ -1,0 +1,8 @@
+name: ph_signal_monitoring
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - numpy>=1.19
+  - pandas>=1.1
+  - matplotlib>=3.3
