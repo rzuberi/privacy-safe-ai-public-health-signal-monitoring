@@ -4,7 +4,7 @@
 
 > [!NOTE]
 > **In plain language**
-> Big public-health problems do not usually begin with one obvious sign. They often start with lots of small changes that are easy to miss. This project tests a simple, safer way to notice those changes earlier: look only at broad non-sensitive patterns, raise a basic warning when something looks unusual, and show in plain words why it was flagged.[1][2][3][4][5][6][7][8][9][10][11]
+> Big public-health problems do not usually begin with one obvious sign. They often start with lots of small changes that are easy to miss. This project tests a simple, safer way to notice those changes earlier: look only at broad non-sensitive patterns, raise a basic warning when something looks unusual, and show in plain words why it was flagged
 
 ## Overview
 
@@ -12,7 +12,7 @@ This repository is an early research/demo artifact for a narrow question: can si
 
 The current prototype uses only synthetic, non-sensitive data. It demonstrates a small end-to-end workflow for generating benign time-series signals, fitting a baseline anomaly detector, scoring new observations, attaching lightweight explanations, and saving outputs for review. The emphasis is on careful scoping, privacy-aware design choices, and evaluation thinking rather than deployment.
 
-This framing is informed by recent work on epidemic early warning, digital surveillance, privacy-preserving health AI, synthetic data evaluation, interpretable modelling, and trustworthy deployment practice.[1][2][3][4][5][6][7][8][9][10][11]
+This framing is informed by recent work on epidemic early warning, digital surveillance, privacy-preserving health AI, synthetic data evaluation, interpretable modelling, and trustworthy deployment practice.[1]
 
 ## Status
 
