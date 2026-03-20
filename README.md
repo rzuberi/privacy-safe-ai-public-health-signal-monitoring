@@ -2,11 +2,17 @@
 
 *A cautious prototype for interpretable, privacy-aware early warning analytics on synthetic data.*
 
+> [!NOTE]
+> **In plain language**
+> Big public-health problems do not usually begin with one obvious sign. They often start with lots of small changes that are easy to miss. This project tests a simple, safer way to notice those changes earlier: look only at broad non-sensitive patterns, raise a basic warning when something looks unusual, and show in plain words why it was flagged.[1][2][3][4][5][6][7][8][9][10][11]
+
 ## Overview
 
 This repository is an early research/demo artifact for a narrow question: can simple, interpretable models help flag unusual public-health-style signal patterns without relying on sensitive personal data or making operational claims?
 
 The current prototype uses only synthetic, non-sensitive data. It demonstrates a small end-to-end workflow for generating benign time-series signals, fitting a baseline anomaly detector, scoring new observations, attaching lightweight explanations, and saving outputs for review. The emphasis is on careful scoping, privacy-aware design choices, and evaluation thinking rather than deployment.
+
+This framing is informed by recent work on epidemic early warning, digital surveillance, privacy-preserving health AI, synthetic data evaluation, interpretable modelling, and trustworthy deployment practice.[1][2][3][4][5][6][7][8][9][10][11]
 
 ## Status
 
@@ -289,3 +295,27 @@ This work overlaps with broader interests in multimodal health AI methods, inter
 
 Maintainer: R Zuberi  
 Collaboration placeholder: issues and thoughtful feedback are welcome, especially on evaluation design, interpretability, privacy-preserving approaches, and responsible scoping.
+
+## Selected Recent Reading
+
+[1] MacIntyre CR, Chen X, Kunasekaran M, Quigley A, Lim S, Stone H, et al. *Artificial intelligence in public health: the potential of epidemic early warning systems.* Journal of International Medical Research. 2023;51(3). DOI: [10.1177/03000605231159335](https://doi.org/10.1177/03000605231159335)
+
+[2] Li Z, Meng F, Wu B, et al. *Reviewing the progress of infectious disease early warning systems and planning for the future.* BMC Public Health. 2024;24:3080. DOI: [10.1186/s12889-024-20537-2](https://doi.org/10.1186/s12889-024-20537-2)
+
+[3] McClymont H, Lambert SB, Barr I, Vardoulakis S, Bambrick H, Hu W, et al. *Internet-based Surveillance Systems and Infectious Diseases Prediction: An Updated Review of the Last 10 Years and Lessons from the COVID-19 Pandemic.* Journal of Epidemiology and Global Health. 2024;14:645-657. DOI: [10.1007/s44197-024-00272-y](https://doi.org/10.1007/s44197-024-00272-y)
+
+[4] Rilkoff H, Struck S, Ziegler C, Faye L, Paquette D, Buckeridge D. *Innovations in public health surveillance: An overview of novel use of data and analytic methods.* Canada Communicable Disease Report. 2024;50(3-4):93-101. DOI: [10.14745/ccdr.v50i34a02](https://doi.org/10.14745/ccdr.v50i34a02)
+
+[5] Pati S, Kumar S, Varma A, Edwards B, Lu C, Qu L, et al. *Privacy preservation for federated learning in health care.* Patterns. 2024;5(7):100974. DOI: [10.1016/j.patter.2024.100974](https://doi.org/10.1016/j.patter.2024.100974)
+
+[6] Tian M, Chen B, Guo A, Jiang S, Zhang AR. *Reliable generation of privacy-preserving synthetic electronic health record time series via diffusion models.* Journal of the American Medical Informatics Association. 2024;31(11):2529-2539. DOI: [10.1093/jamia/ocae229](https://doi.org/10.1093/jamia/ocae229)
+
+[7] Nasarian E, Alizadehsani R, Acharya UR, Tsui KL. *Designing interpretable ML system to enhance trust in healthcare: A systematic review to proposed responsible clinician-AI-collaboration framework.* Information Fusion. 2024;108:102412. DOI: [10.1016/j.inffus.2024.102412](https://doi.org/10.1016/j.inffus.2024.102412)
+
+[8] Lekadir K, Frangi AF, Porras AR, Glocker B, Cintas C, Langlotz CP, et al. *FUTURE-AI: international consensus guideline for trustworthy and deployable artificial intelligence in healthcare.* BMJ. 2025;388:e081554. DOI: [10.1136/bmj-2024-081554](https://doi.org/10.1136/bmj-2024-081554)
+
+[9] Wagner JK, Doerr M, Schmit CD. *AI Governance: A Challenge for Public Health.* JMIR Public Health and Surveillance. 2024;10:e58358. DOI: [10.2196/58358](https://doi.org/10.2196/58358)
+
+[10] Qian Z, Callender T, Cebere B, Janes SM, Navani N, van der Schaar M, et al. *Synthetic data for privacy-preserving clinical risk prediction.* Scientific Reports. 2024;14:25676. DOI: [10.1038/s41598-024-72894-y](https://doi.org/10.1038/s41598-024-72894-y)
+
+[11] Kaabachi B, Despraz J, Meurers T, Otte K, Halilovic M, Prasser F, et al. *A scoping review of privacy and utility metrics in medical synthetic data.* npj Digital Medicine. 2025;8:60. DOI: [10.1038/s41746-024-01359-3](https://doi.org/10.1038/s41746-024-01359-3)
