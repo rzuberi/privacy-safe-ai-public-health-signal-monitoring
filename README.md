@@ -126,6 +126,29 @@ python3 -m src.evaluate
 
 The repository already includes sample outputs generated from this workflow.
 
+## Reproducibility
+
+The demo is meant to be rerunnable in a few commands from a clean checkout:
+
+```bash
+python3 -m src.generate_data
+python3 -m src.train_baseline
+python3 -m src.score_signals
+python3 -m src.evaluate
+```
+
+If you rerun the pipeline with the default seed, it will regenerate the synthetic dataset, baseline summary, predictions CSV, plot, and evaluation summary shipped in the repository.
+
+## Current Sample Output
+
+The checked-in sample run is intentionally modest:
+
+- 180 synthetic daily rows
+- 13 alert days flagged
+- precision `1.00` and recall `0.54` against synthetic labels only
+
+Those figures are included as a transparent demo artifact, not as a claim about real-world performance.
+
 ## Repository Structure
 
 ```text
@@ -234,6 +257,7 @@ See [docs/safety_note.md](docs/safety_note.md) for the short project note.
 - the baseline is intentionally simple and should not be mistaken for a validated system
 - the explanations are lightweight heuristic summaries, not full causal analysis
 - this repository is aimed at research scoping, not deployment
+- the current operating threshold is a hand-set demo default, not a tuned decision rule
 
 ## Potential Research Relevance
 

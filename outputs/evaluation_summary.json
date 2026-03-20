@@ -1,5 +1,8 @@
 {
   "dataset_rows": 180,
+  "data_scope": "synthetic aggregate toy signals only",
+  "intended_use": "repository sanity check only",
+  "operational_relevance": "none",
   "true_positives": 13,
   "false_positives": 0,
   "true_negatives": 156,
@@ -8,5 +11,10 @@
   "recall": 0.5417,
   "f1": 0.7027,
   "alert_rate": 0.0722,
-  "note": "Metrics are against synthetic labels and are only sanity checks for the demo."
+  "evaluation_limits": [
+    "Labels are synthetic and were generated for a narrow toy scenario.",
+    "These metrics should not be treated as evidence of real-world monitoring performance.",
+    "The summary is useful for regression checks inside the demo repository only."
+  ],
+  "note": "Metrics are against synthetic labels and are included for transparency, not validation."
 }

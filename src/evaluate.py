@@ -31,6 +31,9 @@ def main() -> None:
 
     summary = {
         "dataset_rows": int(len(df)),
+        "data_scope": "synthetic aggregate toy signals only",
+        "intended_use": "repository sanity check only",
+        "operational_relevance": "none",
         "true_positives": tp,
         "false_positives": fp,
         "true_negatives": tn,
@@ -39,7 +42,12 @@ def main() -> None:
         "recall": round(recall, 4),
         "f1": round(f1, 4),
         "alert_rate": round(alert_rate, 4),
-        "note": "Metrics are against synthetic labels and are only sanity checks for the demo.",
+        "evaluation_limits": [
+            "Labels are synthetic and were generated for a narrow toy scenario.",
+            "These metrics should not be treated as evidence of real-world monitoring performance.",
+            "The summary is useful for regression checks inside the demo repository only.",
+        ],
+        "note": "Metrics are against synthetic labels and are included for transparency, not validation.",
     }
     save_json(summary, Path(args.output))
     print(f"saved evaluation summary to {args.output}")
