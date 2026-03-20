@@ -1,0 +1,12 @@
+{
+  "dataset_rows": 180,
+  "true_positives": 13,
+  "false_positives": 0,
+  "true_negatives": 156,
+  "false_negatives": 11,
+  "precision": 1.0,
+  "recall": 0.5417,
+  "f1": 0.7027,
+  "alert_rate": 0.0722,
+  "note": "Metrics are against synthetic labels and are only sanity checks for the demo."
+}

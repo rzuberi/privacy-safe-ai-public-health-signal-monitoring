@@ -1,0 +1,38 @@
+{
+  "model_name": "robust_reference_zscore",
+  "reference_days": 60,
+  "threshold": 2.35,
+  "feature_columns": [
+    "respiratory_visits_index",
+    "otc_cold_flu_index",
+    "school_absence_index",
+    "symptom_search_index",
+    "wastewater_proxy_index"
+  ],
+  "feature_stats": {
+    "respiratory_visits_index": {
+      "median": 1.0519839097090309,
+      "mad": 0.05685631357207044
+    },
+    "otc_cold_flu_index": {
+      "median": 0.917944897421064,
+      "mad": 0.05558503938226855
+    },
+    "school_absence_index": {
+      "median": 1.0023360543475839,
+      "mad": 0.037537511750454444
+    },
+    "symptom_search_index": {
+      "median": 1.1011906489433567,
+      "mad": 0.03593809152760008
+    },
+    "wastewater_proxy_index": {
+      "median": 0.9528061009948952,
+      "mad": 0.04261844823335942
+    }
+  },
+  "notes": [
+    "Simple baseline for interpretable anomaly scoring.",
+    "Uses only aggregate synthetic signals in this repository."
+  ]
+}
